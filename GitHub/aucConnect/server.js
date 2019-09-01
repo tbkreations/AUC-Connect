@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 const fs = require('fs');
 
@@ -25,13 +26,16 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
-//Body Parser
-app.use(express.urlencoded({
-    extended: false
-}));
+// Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Routes
 app.use('/', indexRouter);
 app.use('/users', require('./routes/users'));
+
+app.post('/users/register', (req, res) => {
+    
+})
 
 app.listen(process.env.PORT || 3000);

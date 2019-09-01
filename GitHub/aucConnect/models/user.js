@@ -3,11 +3,11 @@ const mongoose = require("mongoose")
 const UserSchema = new mongoose.Schema({
     firstname: {
         type: String,
-        required: true
+        required: false
     },
     lastname: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     roles: {
         type: Array,
         'default': ["Student"]
+    },
+    endorsements: {
+        type: Array,
     }
 })
 
