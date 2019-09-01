@@ -1,8 +1,24 @@
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
+const fs = require('fs');
 
 const indexRouter = require('./routes/index');
+
+//DB Config
+let db;
+if (fs.existsSync(__dirname + '/config')) {
+    console.log("Mongo Setup: DBCONF");
+    db = require('./config/keys').MongoURI;
+} else {
+    console.log("Mongo Setup: DBENV");
+    db = process.env.DATABASE_URL;
+};
+
+const mongoose = require('mongoose');
+mongoose.connect(db, {useNewUrlParser: true})
+    .then(() => console.log('Mongo DB Connected...'))
+    .catch(err => console.log(err));
 
 //EJS
 app.use(expressLayouts);
@@ -14,13 +30,8 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-// Express Session
-// app.use(session({
-//     secret: 'secret',
-//     resave: true,
-//     saveUninitialized: true
-// }));
-
+//Routes
 app.use('/', indexRouter);
+app.use('/users', require('./routes/users'));
 
 app.listen(process.env.PORT || 3000);

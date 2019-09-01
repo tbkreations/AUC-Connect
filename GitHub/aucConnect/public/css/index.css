@@ -1,11 +1,11 @@
 body {
     background-color: #697475;
-    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-image: url(../images/black-paper.png);
     width: 100%;
     height: 100%;
 }
 
+/* main div container */
 .main {
     display: flex;
     flex-direction: column;
@@ -16,12 +16,20 @@ body {
     text-align: center;
 }
 
-.navBtn:hover {
-    cursor: pointer;
-    text-decoration: underline;
+/* input styles: text, email, and number */
+.input-field label {
+    color: gold !important;
 }
 
-.navBtn:focus {
-    outline: none;
-    background: rgba(239, 164, 39, 0.8) !important;
+.input-field input:focus+label {
+    color: gold !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid gold !important;
+    box-shadow: 0 1px 0 0 gold !important;
+}
+
+.navBtn:hover {
+    cursor: pointer;
 }

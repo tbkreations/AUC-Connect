@@ -1,0 +1,26 @@
+<div class='main' id="registerMain">
+    <a href="/">
+        <h1>AUC Connect</h1>
+    </a>
+
+    <form action='/users/login' method="POST" class="form">
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="email" id="email" type="email" class="validate"
+                    value="<%= typeof email != 'undefined' ? email : '' %>" spellcheck="false">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="password" id="password" type="password" class="validate"
+                    value="<%= typeof password != 'undefined' ? password : '' %>">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Login
+            <i class="material-icons right">send</i>
+        </button>
+        <p><a id="notUser" href="/users/register">Need an Account? Register</a></p>
+    </form>
+</div>

@@ -1,12 +1,47 @@
 <div class='main' id="registerMain">
-    <h1>AUC Connect</h1>
-    <form id="register">
-        <div class="row">
-            <input name="email" id="email" type="email" class="validate"
-                value="<%= typeof email != 'undefined' ? email : '' %>" spellcheck="false">
-            <label for="email">Email</label>
+    <a href="/">
+        <h1>AUC Connect</h1>
+    </a>
+
+    <form action='/users/register' method="POST" class="form">
+        <!-- <div class="row">
+            <div class="input-field col s12">
+                <input name="first_name" id="first_name" type="text" class="validate"
+                    value="<%= typeof first_name != 'undefined' ? first_name : '' %>" spellcheck="false">
+                <label for="first_name">First Name</label>
+            </div>
         </div>
-        <button type="submit" id="register" class="navBtn">Register</button>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="last_name" id="last_name" type="text" class="validate"
+                    value="<%= typeof last_name != 'undefined' ? last_name : '' %>" spellcheck="false">
+                <label for="last_name">Last Name</label>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="email" id="email" type="email" class="validate"
+                    value="<%= typeof email != 'undefined' ? email : '' %>" spellcheck="false">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="input-field col s12">
+                <input name="password" id="password" type="password" class="validate"
+                    value="<%= typeof password != 'undefined' ? password : '' %>">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="confirmPassword" id="confirmPassword" type="password" class="validate"
+                    value="<%= typeof password != 'undefined' ? password : '' %>">
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+        </div> -->
+        <button class="btn waves-effect waves-light" type="submit" name="action">Register
+            <i class="material-icons right">send</i>
+        </button>
         <p><a id="isUser" href="/users/login">Have an Account? Login</a></p>
     </form>
 </div>
