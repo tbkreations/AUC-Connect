@@ -1,0 +1,27 @@
+body {
+    background-color: #697475;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.navBtn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navBtn:focus {
+    outline: none;
+    background: rgba(239, 164, 39, 0.8) !important;
+}

@@ -1,0 +1,12 @@
+<div class='main' id="registerMain">
+    <h1>AUC Connect</h1>
+    <form id="register">
+        <div class="row">
+            <input name="email" id="email" type="email" class="validate"
+                value="<%= typeof email != 'undefined' ? email : '' %>" spellcheck="false">
+            <label for="email">Email</label>
+        </div>
+        <button type="submit" id="register" class="navBtn">Register</button>
+        <p><a id="isUser" href="/users/login">Have an Account? Login</a></p>
+    </form>
+</div>
