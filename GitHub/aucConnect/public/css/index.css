@@ -18,16 +18,16 @@ body {
 
 /* input styles: text, email, and number */
 .input-field label {
-    color: gold !important;
+    color: black !important;
 }
 
 .input-field input:focus+label {
-    color: gold !important;
+    color: black !important;
 }
 
 .input-field input:focus {
-    border-bottom: 1px solid gold !important;
-    box-shadow: 0 1px 0 0 gold !important;
+    border-bottom: 1px solid black !important;
+    box-shadow: 0 1px 0 0 black !important;
 }
 
 .navBtn:hover {
